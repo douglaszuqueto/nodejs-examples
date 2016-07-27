@@ -3,7 +3,7 @@ version: '2'
 services:
 
  web:
-   container_name: nodejs-hapijs
+   container_name: nodejs-expressjs
    image: douglaszuqueto/alpine-nodejs:6.3.0
    volumes:
     - .:/app
