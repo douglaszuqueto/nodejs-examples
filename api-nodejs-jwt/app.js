@@ -24,9 +24,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
 /**
+ * Index
+ */
+app.get('/', (req, res) => res.json('APP is Running'));
+
+/**
  * Routes
  */
-require('./routes')(app);
+app.use('/api/v1', require('./routes'));
 
 
 module.exports = app;

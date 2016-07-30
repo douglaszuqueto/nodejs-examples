@@ -1,18 +1,20 @@
-module.exports = (app) => {
+const express = require('express');
+const router = express.Router();
 
-    /**
-     * Index
-     */
-    app.get('/', (req, res) => res.json('ok'));
+/**
+ * Index
+ */
+router.get('/', (req, res) => res.json('API is Running'));
 
-    /**
-     * User
-     */
-    app.use('/users', require('./user/user'));
+/**
+ * User
+ */
+router.use('/users', require('./user/user'));
 
-    /**
-     * Protected Route
-     */
-    app.get('/secret', require('../config/middlewares/jwt') ,(req, res) => res.json('ok'));
+/**
+ * Protected Route
+ */
+router.get('/secret', require('../config/middlewares/jwt'), (req, res) => res.json('ok'));
 
-};
+
+module.exports = router;
