@@ -4,7 +4,7 @@ const secret = require('../../../config/jwt').secret;
 
 module.exports = (req, res) => {
     User.findOne({
-        name: req.body.name
+        email: req.body.email
     }, (err, user) => {
 
         if (err) throw err;

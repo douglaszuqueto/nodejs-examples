@@ -43,8 +43,10 @@ module.exports = {
         });
     },
     create: (data, cb) => {
-        let user = {name: data.name, email: data.email};
+        let user = {name: data.name, email: data.email, password: data.password};
 
+        console.log(user);
+        
         User.create(user, (err, user) => {
 
             let data = {};

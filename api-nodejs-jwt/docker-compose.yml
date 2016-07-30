@@ -3,11 +3,12 @@
 # NodeJS App
 web:
  image: douglaszuqueto/alpine-nodejs:6.3.0
- container_name: api-nodejs
+ container_name: jwt-nodejs
  ports:
   - 3000:3000
  volumes:
   - .:/app
+ working_dir: /app
  links:
   - mongodb
  command: npm start
@@ -16,7 +17,7 @@ web:
 # MongoDB
 mongodb:
  image: douglaszuqueto/alpine-mongodb:3.2.7
- container_name: api-mongodb
+ container_name: jwt-mongodb
  ports:
   - 27017:27017
  volumes:

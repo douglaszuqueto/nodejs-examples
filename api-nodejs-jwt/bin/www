@@ -4,6 +4,6 @@ const app = require('../app.js');
 const config = require('../config/config');
 
 // listen
-app.listen(config.server.port, '192.168.33.50' ,() => {
+app.listen(config.server.port ,() => {
     console.log('Server Running');
 });
